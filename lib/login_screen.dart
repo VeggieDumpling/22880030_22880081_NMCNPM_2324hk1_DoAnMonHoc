@@ -37,12 +37,12 @@ class LoginScreen extends StatelessWidget {
                 children: <Widget>[
                   TextFormField(
                     decoration: const InputDecoration(
-                      hintText: 'Enter your username',
+                      hintText: 'Username',
                     ),
                   ),
                   TextFormField(
                     decoration: const InputDecoration(
-                      hintText: 'Enter your password',
+                      hintText: 'Password',
                     ),
                     obscureText: true,
                     // validator: (value) {
@@ -59,19 +59,18 @@ class LoginScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      ElevatedButton(
+                      FilledButton(
                         onPressed: () {
                           // if (_formKey.currentState.validate()) {
                           //   _formKey.currentState.save();
                           //   print('Username: $_username');
                           //   print('Password: $_password');
                           // }
+                          Navigator.pop(context);
+                          Navigator.pushNamed(context, '/home-screen');
                         },
                         child: const Text(
                           'Login',
-                          // style: TextStyle(
-                          //   color: Colors.teal,
-                          // ),
                         ),
                       ),
                       TextButton(
@@ -81,9 +80,6 @@ class LoginScreen extends StatelessWidget {
                         },
                         child: const Text(
                           'Sign Up',
-                          // style: TextStyle(
-                          //   color: Color.fromARGB(150, 255, 255, 255),
-                          // ),
                         ),
                       ),
                     ],
